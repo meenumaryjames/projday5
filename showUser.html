@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Reset</title>
+<link rel="stylesheet" type="text/css" href="site.css" />
+<script src="app.js"></script>
+
+<script>
+
+function show()
+{
+ // myApp.UserModule.show1();
+
+  // var data=myApp.UserModule.data;
+
+ // alert(data[0].username);
+  if (localStorage.userData != null && localStorage.userData != undefined)
+     {
+            this.data = JSON.parse(localStorage.userData);
+        }
+alert(data[0].username);
+var table="<table border='1'><tr><th>username</th><th>password</th><th>action</th></tr>";
+  data.forEach(function(entry)
+  {
+    var tr="<tr><td>"+entry.username+"</td><td>"+entry.password+"</td><td><a href="javascript:void(0)" onclick="removeRow(el)">Delete</a></td></tr>";
+    table+=tr;
+  });
+  table+="</table>";
+  document.getElementById("grid").innerHTML=table;
+
+       
+  }  
+  
+    function removeRow(el)
+{
+    var tr = el.parentElement.parentElement;
+    tr.parentElement.removeChild(tr);
+    document.getElementById("grid").innerHTML=table;
+
+}      
+        
+    </script>
+    </head>
+<section id="maincontent">
+            <section id="contentHeader">
+                
+            </section>
+            <section id="content">
+               
+                   <h1>Hello...Admin</h1>
+               
+          <div id="grid">
+
+          </div>
+                
+          <form>
+                    
+                    <div>
+                        <button type="button"  onclick="show()">Show</button>
+                    </div>
+                     </form>
+
+            </section>
+       
+
+        </section>
+
+        <section id="clear"></section>
+        <section id="pageFooter">
+            <footer>
+                <span>&copy;All Rights Reserved. <span id="spnDateTime"></span></span>
+            </footer>
+        </section>
+    </div>
+
+</body>
+</html>
